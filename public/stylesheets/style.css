@@ -39,8 +39,14 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
-#wrapper {
+#outer_wrapper {
     background: url(/images/bg_wall-floor.png) repeat-x;
+    height: 100%;
+	position: absolute;
+	width: 100%;
+}
+#wrapper {
+    background: url(/images/highlight_wall.png) center top no-repeat fixed;
     height: 100%;
     left: 0;
 	overflow: auto;
@@ -50,7 +56,6 @@ h1, h2, h3, h4, h5, h6 {
     z-index: 1;
 }
     #scroller {
-        /*background: url(/images/);*/
         float: left;
         height: 100%;
         width: 3000px;
@@ -65,25 +70,29 @@ h1, h2, h3, h4, h5, h6 {
             margin:0;
             text-align:left;
         }
-    #wrapper #header {
-        background: url(/images/bg_sign.png) no-repeat 0 320px;
+    #wrapper #first, #wrapper #last {
         height: 100%;
     }
-        #header h1, #header p {
+    #wrapper #first {
+        background: url(/images/bg_sign.png) no-repeat 0 315px;
+    }
+        #first h1, #first p {
             margin-right: 20px;
             text-align: right;
             opacity: 0.7;
         }
-        #header h1 {
+        #first h1 {
             font-size: 5em;
             line-height: 0.7em;
             margin: 0;
             text-transform: uppercase;
         }
-        #header p {
+        #first p {
             font-size: 3em;
             margin: 20px 0 0;
         }
+    #wrapper #last {
+    }
     #wrapper li {
         float: left;
         margin: 0;
