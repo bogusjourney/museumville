@@ -1,13 +1,10 @@
-
-/**
- * Module dependencies.
- */
-
 var express = require('express');
+var fs = require('fs');
+
+
+var dataDir = __dirname + "/fixtures";
 
 var app = module.exports = express.createServer();
-
-// Configuration
 
 app.configure(function(){
   app.set('views', __dirname + '/views');
@@ -26,14 +23,34 @@ app.configure('production', function(){
   app.use(express.errorHandler()); 
 });
 
-// Routes
+
 
 app.get('/', function(req, res){
   res.render('index', {
-    title: 'Express',
+    title: 'MuseumVille',
     items: ['Item A', 'Item B']
   });
 });
 
+app.get('/:id.:format?', function(req, res) {
+  var userId = req.params.id;
+  var format = req.params.format;
+  var doRender = (format === 'json')?
+    function (str) { res.send(str); }
+  :
+    function (str) {
+      var data = JSON.parse(str);
+      res.render('curator', {
+        'title': "MuseumVille - " + data.name,
+        'curator': data
+      });
+    }
+  ;
+  var fpath = dataDir + "/users/" + userId + "/data.json"
+   fs.readFile(fpath, "utf-8", function (err, str) { doRender(str); });
+});
+
+
 app.listen(3000);
 console.log("Express server listening on port %d", app.address().port);
+

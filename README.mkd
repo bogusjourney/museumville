@@ -1,0 +1,10 @@
+MuseumVille
+========================================================================
+
+As a Museum Curator, your role is to collect Europeana artifacts (Items) and
+create Exhibitions with them.
+
+Categories: subjects, themes...
+
+... places, periods, persons, subjects (fiction, realist fiction)...
+
