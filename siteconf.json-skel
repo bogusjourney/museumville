@@ -1,4 +1,5 @@
 {
+  "serverPort": 3000,
   "europeana": {
     "apiKey": "__TODO__"
   }

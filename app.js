@@ -78,6 +78,6 @@ app.get('/:id.:format?', function(req, res) {
 });
 
 
-app.listen(3000);
+app.listen(config.serverPort);
 console.log("Express server listening on port %d", app.address().port);
 
