@@ -7,6 +7,7 @@ var request = require('request');
 var config = JSON.parse(fs.readFileSync(__dirname + "/siteconf.json", "utf-8"));
 var dataDir = config.dataDir || __dirname + "/fixtures";
 
+
 var app = module.exports = express.createServer();
 
 app.configure(function(){
@@ -18,7 +19,7 @@ app.configure(function(){
   app.use(express.static(__dirname + '/public'));
 });
 
-app.configure('development', function(){
+app.configure('development', function() {
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true })); 
 });
 
@@ -67,7 +68,13 @@ app.get('/:id.:format?', function(req, res) {
     }
   ;
   var fpath = dataDir + "/users/" + userId + "/data.json"
-   fs.readFile(fpath, "utf-8", function (err, str) { doRender(str); });
+   fs.readFile(fpath, "utf-8", function (err, str) {
+     if (err) {
+       res.send(err, 404);
+     } else {
+        doRender(str);
+     }
+   });
 });
 
 
