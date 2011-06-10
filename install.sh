@@ -4,6 +4,7 @@
 npm install express
 npm install ejs
 npm install request
+npm install xml2js
 
 # client app dependencies
 
