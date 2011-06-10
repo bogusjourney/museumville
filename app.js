@@ -1,14 +1,16 @@
 var http = require('http');
 var express = require('express');
-var fs = require('fs');
 var request = require('request');
+var database = require('./database');
 
 
-var config = JSON.parse(fs.readFileSync(__dirname + "/siteconf.json", "utf-8"));
+var config = database.loadJSON(__dirname + "/siteconf.json", "utf-8");
 var dataDir = config.dataDir || __dirname + "/fixtures";
+var db = database.init(dataDir);
 
 
 var app = module.exports = express.createServer();
+
 
 app.configure(function(){
   app.set('views', __dirname + '/views');
@@ -26,7 +28,6 @@ app.configure('development', function() {
 app.configure('production', function(){
   app.use(express.errorHandler()); 
 });
-
 
 
 app.get('/', function(req, res){
@@ -55,28 +56,24 @@ app.post('/search', function(req, res) {
 
 app.get('/:id.:format?', function(req, res) {
   var userId = req.params.id;
+  var data = db.users[userId];
+  if (!data) {
+    res.send(404);
+    return;
+  }
   var format = req.params.format;
   var doRender = (format === 'json')?
-    function (str) { res.send(str); }
+    function (data) { res.send(JSON.stringify(data)); }
   :
-    function (str) {
-      var data = JSON.parse(str);
+    function (data) {
       res.render('curator', {
         'title': "MuseumVille - " + data.name,
         'curator': data
       });
     }
   ;
-  var fpath = dataDir + "/users/" + userId + "/data.json"
-   fs.readFile(fpath, "utf-8", function (err, str) {
-     if (err) {
-       res.send(err, 404);
-     } else {
-        doRender(str);
-     }
-   });
+  doRender(data);
 });
-
 
 app.listen(config.serverPort);
 console.log("Express server listening on port %d", app.address().port);

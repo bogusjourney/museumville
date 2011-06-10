@@ -1,12 +1,13 @@
 {
+  "id": "ted",
   "name": "Ted",
   "museum": {
     "exhibits": [
       {
-        "name": "Armour Time"
+        "name": "Armour Time",
         "items": [
           {
-            "topic": "http://www.europeana.eu/resolve/record/09405k/4ED40762EE00C23F96FED769355D88922671DEBB"
+            "topic": "http://www.europeana.eu/resolve/record/09405k/4ED40762EE00C23F96FED769355D88922671DEBB",
             "categories": [
               "italy",
               "16th_century"
