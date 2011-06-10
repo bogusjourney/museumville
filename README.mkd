@@ -4,7 +4,56 @@ MuseumVille
 As a Museum Curator, your role is to collect Europeana artifacts (Items) and
 create Exhibitions with them.
 
-Categories: subjects, themes...
+# Definition of Terms #
 
-... places, periods, persons, subjects (fiction, realist fiction)...
+<dl>
+  <dt>Curator</dt>
+  <dd>The role of a Museum player</dd>
+  <dt>Exhibit</dt>
+  <dd>A Curator has one or more exhibits</dd>
+  <dt>Item</dt>
+  <dd>The subject artifact of a Europeana record</dd>
+  <dt>Visitor</dt>
+  <dd>Any visitor to an Exhibit page</dd>
+  <dt>Category</dt>
+  <dd>A category used to tag Items</dd>
+  <dt>Stats</dt>
+  <dd>MuseumVille statistics of visitor interactions</dd>
+</dl>
+
+
+# Scoring Points #
+
+The purpose of playing is to create more and more valuable exhibits.
+
+
+## Popularity ##
+
+Points are gained on unique visits.
+
+Generated Europeana value:
+
+  - stats on popular items and viable/interersting groupings of items
+
+
+## Origin Popularity ##
+
+Points are gained when visitors leave the exhibit by clicking on a link to the homepage of the item.
+
+(Technical solution: exit page or "pingback" from homepage (probably unfeasible).)
+
+Generated Europeana value:
+
+  - stats on popularity of an item
+
+
+## Categorizing Records ##
+
+Points are gained when curators 
+
+Categories: places, periods, persons, subjects/themes/tropes...
+
+Generated Europeana value:
+
+  - continuously curated item categorizations (under the hood: linked data in the form of dct:subjects for Items, and categories as Concepts expressed in SKOS.)
 
