@@ -18,11 +18,11 @@ app.configure(function(){
 });
 
 app.configure('development', function() {
-  app.use(express.errorHandler({ dumpExceptions: true, showStack: true })); 
+  app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
 });
 
 app.configure('production', function(){
-  app.use(express.errorHandler()); 
+  app.use(express.errorHandler());
 });
 
 
@@ -44,8 +44,6 @@ app.post('/search', function(req, res) {
     if (!error && clientRes.statusCode == 200) {
       var parser = new xml2js.Parser();
       parser.addListener('end', function(result) {
-        var sys = require('sys');
-        console.log('asdasdasd => ' + sys.inspect(result.channel.item[0].enclosure["@"].url));
         res.render('search_result', { items: result.channel.item, title: 'search'});
       });
       parser.parseString(body);
@@ -79,4 +77,3 @@ app.get('/:id.:format?', function(req, res) {
 
 app.listen(config.serverPort);
 console.log("Express server listening on port %d", app.address().port);
-
