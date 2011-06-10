@@ -39,11 +39,11 @@ app.get('/', function(req, res){
 });
 
 app.get('/search', function(req, res) {
-  res.render('search', { title: 'search'});
-});
-
-app.post('/search', function(req, res) {
-  var searchString = req.param('search_string');
+  var searchString = req.param('q');
+  if (!searchString) {
+    res.render('search', { title: 'search'});
+    return;
+  }
   var searchUri = 'http://api.europeana.eu/api/opensearch.rss?searchTerms=' +
       searchString + '&qf=TYPE:IMAGE&wskey=' + config.europeana.apiKey;
   var clientReq = request({uri: searchUri}, function(error, clientRes, body) {
@@ -79,6 +79,17 @@ app.get('/:userId/exhibit/:exhibitId', function(req, res) {
     'curator': curator,
     'exhibit': exhibit
   });
+});
+
+app.post('/:userId/exhibit/:exhibitId', function(req, res) {
+  var curator = db.users[req.params.userId];
+  if (!curator) { res.send(404); return; }
+  var exhibit = curator.exhibits[parseInt(req.params.exhibitId)];
+  if (!exhibit) { res.send(404); return; }
+  if (req.accepts('json')) {
+    db.addItem(exhibit, req.body.url);
+    res.send(200);
+  }
 });
 
 app.listen(config.serverPort);
