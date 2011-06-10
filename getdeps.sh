@@ -1,9 +1,9 @@
 #!/bin/bash
 cd "$(dirname $0)"
-force=("$1" == "-f")
+force=$1
 
 download() {
-  if [ $force ] || [[ ! -e $2 ]]; then
+  if [ $force == "-f" ] || [[ ! -e $2 ]]; then
     echo "Downloading <$1> to: $2"
     curl -# $1 -o $2
   fi
