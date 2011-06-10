@@ -1,2 +1,7 @@
 <%= title %>
-<%= body %>
+
+<ul>
+  <% for(var i=0; i<items.length; i++) {%>
+    <li><span class="title"><%= items[i].title %></span><img src="<%= items[i].enclosure["@"].url %>"/></li>
+  <% } %>
+</ul>
