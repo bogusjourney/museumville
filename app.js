@@ -1,13 +1,10 @@
-
-/**
- * Module dependencies.
- */
-
 var express = require('express');
+var fs = require('fs');
+
+
+var dataDir = __dirname + "/fixtures";
 
 var app = module.exports = express.createServer();
-
-// Configuration
 
 app.configure(function(){
   app.set('views', __dirname + '/views');
@@ -26,7 +23,7 @@ app.configure('production', function(){
   app.use(express.errorHandler()); 
 });
 
-// Routes
+
 
 app.get('/', function(req, res){
   res.render('index', {
@@ -35,5 +32,15 @@ app.get('/', function(req, res){
   });
 });
 
+app.get('/data/user/:id', function(req, res) {
+  var userId = req.params.id;
+  var fpath = dataDir + "/users/" + userId + "/data.json"
+  fs.readFile(fpath, "utf-8", function (err, data) {
+    res.send(data);
+  });
+});
+
+
 app.listen(3000);
 console.log("Express server listening on port %d", app.address().port);
+
