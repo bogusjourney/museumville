@@ -1,8 +1,10 @@
+var http = require('http');
 var express = require('express');
 var fs = require('fs');
+var request = require('request');
 
 
-var config = fs.readFileSync(__dirname + "/siteconf.json", "utf-8");
+var config = JSON.parse(fs.readFileSync(__dirname + "/siteconf.json", "utf-8"));
 var dataDir = config.dataDir || __dirname + "/fixtures";
 
 var app = module.exports = express.createServer();
@@ -31,6 +33,23 @@ app.get('/', function(req, res){
     title: 'MuseumVille',
     items: ['Item A', 'Item B']
   });
+});
+
+app.get('/search', function(req, res) {
+  res.render('search', { title: 'search'});
+});
+
+app.post('/search', function(req, res) {
+
+  var search_string = req.param('search_string');
+  var clientReq = request({uri:'http://api.europeana.eu/api/opensearch.json?searchTerms=' + search_string + '&wskey=' + config.europeana.apiKey}, function(error, clientRes, body) {
+    if (!error && clientRes.statusCode == 200) {
+      res.render('search_result', { body: body, title: 'search'});
+    } else {
+      console.log('crap');
+    }
+  });
+
 });
 
 app.get('/:id.:format?', function(req, res) {
