@@ -1,6 +1,35 @@
-    <h1><%= title %></h1>
-    <ul>
-      <% for(var i=0; i < items.length; i++) {%>
-        <li><%= items[i] %></li>
-      <% } %>
-    </ul>
+<div id="wrapper" class="pictures">
+    <div id="scroller">
+        <ul>
+            <li id="header">
+                <h1>Faith Hope Love</h1>
+                <p>Curated by John Dove</p>
+            </li>
+            <li>
+                <img src="http://placekitten.com/306/200">
+            </li>
+            <li>
+                <img src="http://placekitten.com/180/250">
+            </li>
+            <li>
+                <img src="http://placekitten.com/306/350">
+            </li>
+            <li>
+                <img src="http://placekitten.com/306/310">
+            </li>
+            <li>
+                <img src="http://placekitten.com/306/220">
+            </li>
+        </ul>
+    </div>
+    <div id="watcher"></div>
+</div>
+<script src="/javascripts/iscroll.js"></script>
+<script>
+    var myScroll;
+    function loaded() {
+        myScroll = new iScroll('wrapper');
+    }
+    document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    document.addEventListener('DOMContentLoaded', loaded, false);
+</script>
