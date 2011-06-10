@@ -33,7 +33,7 @@ Points are gained on unique visits.
 
 Generated Europeana value:
 
-  - stats on popular items and viable/interersting groupings of items
+  - stats on popular items and viable/interesting groupings of items
 
 
 ## Origin Popularity ##
