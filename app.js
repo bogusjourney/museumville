@@ -2,7 +2,8 @@ var express = require('express');
 var fs = require('fs');
 
 
-var dataDir = __dirname + "/fixtures";
+var config = fs.readFileSync(__dirname + "/siteconf.json", "utf-8");
+var dataDir = config.dataDir || __dirname + "/fixtures";
 
 var app = module.exports = express.createServer();
 

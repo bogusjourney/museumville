@@ -6,3 +6,6 @@ npm install ejs
 
 # client app dependencies
 
+# installation setup
+cp siteconf.json-skel siteconf.json
+
