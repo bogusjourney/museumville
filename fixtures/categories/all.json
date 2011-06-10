@@ -8,6 +8,6 @@
   },
   {
     "id": "italy",
-    "topic": "http://dbpedia.org/resource/Italy"
+    "subject": "http://dbpedia.org/resource/Italy"
   }
 ]

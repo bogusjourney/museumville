@@ -1,0 +1,45 @@
+<div id="outer_wrapper">
+    <div id="wrapper" class="pictures">
+        <div id="scroller">
+            <ul>
+                <li id="first">
+                    <h1><%= exhibit.name %></h1>
+                    <p>Curated by <%= curator.name %></p>
+                </li>
+                <% exhibit.items.forEach(function (item) { %>
+                    <li>
+                        <a title="<%= item.label.en %>"
+                           href="<%= item.homepage %>"
+                           rel="lightbox"><img src="<%= item.thumbnail %>"></a>
+                    </li>
+                <% }); %>
+                </li>
+                <li id="last">
+
+                </li>
+            </ul>
+        </div>
+        <div id="watcher"></div>
+    </div>
+</div>
+
+<script>
+    var myScroll;
+    function loaded() {
+        myScroll = new iScroll('wrapper');
+    }
+    document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    document.addEventListener('DOMContentLoaded', loaded, false);
+</script>
+<script src="/javascripts/jquery.min.js"></script>
+<script src="/javascripts/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+<script>
+    $("a[rel=lightbox]").fancybox({
+        height: 500,
+        width: 700,
+        type: "iframe",
+        showNavArrows: false,
+        scrolling: "no",
+        autoDimensions: false
+    });
+</script>

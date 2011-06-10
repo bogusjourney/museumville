@@ -1,11 +1,9 @@
 {
   "id": "bill",
   "name": "Bill",
-  "museum": {
-    "exhibits": [
-      {
-        "name": "Excellent Blood Baths"
-      }
-    ]
-  }
+  "exhibits": [
+    {
+      "name": "Excellent Blood Baths"
+    }
+  ]
 }

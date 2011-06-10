@@ -1,12 +1,17 @@
+var sys = require('sys');
 var http = require('http');
 var express = require('express');
 var request = require('request');
 var database = require('./database');
 var xml2js = require('xml2js');
+
+
 var config = database.loadJSON(__dirname + "/siteconf.json", "utf-8");
 var dataDir = config.dataDir || __dirname + "/fixtures";
 var db = database.init(dataDir);
 var app = module.exports = express.createServer();
+//var nowjs = require('now');
+//var everyone = nowjs.initialize(httpServer);
 
 app.configure(function(){
   app.set('views', __dirname + '/views');
@@ -38,13 +43,14 @@ app.get('/search', function(req, res) {
 });
 
 app.post('/search', function(req, res) {
-
-  var search_string = req.param('search_string');
-  var clientReq = request({uri:'http://api.europeana.eu/api/opensearch.rss?searchTerms=' + search_string + '&qf=TYPE:IMAGE&wskey=' + config.europeana.apiKey}, function(error, clientRes, body) {
+  var searchString = req.param('search_string');
+  var searchUri = 'http://api.europeana.eu/api/opensearch.rss?searchTerms=' +
+      searchString + '&qf=TYPE:IMAGE&wskey=' + config.europeana.apiKey;
+  var clientReq = request({uri: searchUri}, function(error, clientRes, body) {
     if (!error && clientRes.statusCode == 200) {
       var parser = new xml2js.Parser();
       parser.addListener('end', function(result) {
-        res.render('search_result', { items: result.channel.item, title: 'search'});
+        res.render('search_result', {items: result.channel.item, title: 'search'});
       });
       parser.parseString(body);
     } else {
@@ -54,25 +60,25 @@ app.post('/search', function(req, res) {
 
 });
 
-app.get('/:id.:format?', function(req, res) {
-  var userId = req.params.id;
-  var data = db.users[userId];
-  if (!data) {
-    res.send(404);
-    return;
-  }
-  var format = req.params.format;
-  var doRender = (format === 'json')?
-    function (data) { res.send(JSON.stringify(data)); }
-  :
-    function (data) {
-      res.render('curator', {
-        'title': "MuseumVille - " + data.name,
-        'curator': data
-      });
-    }
-  ;
-  doRender(data);
+app.get('/:userId', function(req, res) {
+  var data = db.users[req.params.userId];
+  if (!data) { res.send(404); return; }
+  res.render('curator', {
+    'title': "MuseumVille - " + data.name,
+    'curator': data
+  });
+});
+
+app.get('/:userId/exhibit/:exhibitId', function(req, res) {
+  var curator = db.users[req.params.userId];
+  if (!curator) { res.send(404); return; }
+  var exhibit = curator.exhibits[parseInt(req.params.exhibitId)];
+  if (!exhibit) { res.send(404); return; }
+  res.render('exhibit', {
+    'title': "MuseumVille - " + curator.name + " - " + exhibit.name,
+    'curator': curator,
+    'exhibit': exhibit
+  });
 });
 
 app.listen(config.serverPort);

@@ -1,6 +1,8 @@
 <h1>The museum of <%= curator.name %></h1>
 <ul>
-  <% curator.museum.exhibits.forEach(function(exhibit) { %>
-    <li><%= exhibit.name %></li>
+  <% curator.exhibits.forEach(function(exhibit, i) { %>
+    <li>
+      <a href="<%=  curator.id + '/exhibit/' + i %>"><%= exhibit.name %></a>
+    </li>
   <% }); %>
 </ul>
