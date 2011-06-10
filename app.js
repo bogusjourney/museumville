@@ -27,17 +27,27 @@ app.configure('production', function(){
 
 app.get('/', function(req, res){
   res.render('index', {
-    title: 'Express',
+    title: 'MuseumVille',
     items: ['Item A', 'Item B']
   });
 });
 
-app.get('/data/user/:id', function(req, res) {
+app.get('/:id.:format?', function(req, res) {
   var userId = req.params.id;
+  var format = req.params.format;
+  var doRender = (format === 'json')?
+    function (str) { res.send(str); }
+  :
+    function (str) {
+      var data = JSON.parse(str);
+      res.render('curator', {
+        'title': "MuseumVille - " + data.name,
+        'curator': data
+      });
+    }
+  ;
   var fpath = dataDir + "/users/" + userId + "/data.json"
-  fs.readFile(fpath, "utf-8", function (err, data) {
-    res.send(data);
-  });
+   fs.readFile(fpath, "utf-8", function (err, str) { doRender(str); });
 });
 
 
