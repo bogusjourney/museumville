@@ -7,19 +7,19 @@
                     <p>Curated by John Dove</p>
                 </li>
                 <li>
-                    <img src="http://placekitten.com/306/200">
+                    <a href="/search" rel="lightbox"><img src="http://placekitten.com/306/200"></a>
                 </li>
                 <li>
-                    <img src="http://placekitten.com/180/250">
+                    <a href="/search" rel="lightbox"><img src="http://placekitten.com/180/250"></a>
                 </li>
                 <li>
-                    <img src="http://placekitten.com/306/350">
+                    <a href="/search" rel="lightbox"><img src="http://placekitten.com/306/350"></a>
                 </li>
                 <li>
-                    <img src="http://placekitten.com/306/310">
+                    <a href="/search" rel="lightbox"><img src="http://placekitten.com/306/310"></a>
                 </li>
                 <li>
-                    <img src="http://placekitten.com/306/220">
+                    <a href="/search" rel="lightbox"><img src="http://placekitten.com/306/220"></a>
                 </li>
                 <li id="last">
 
@@ -37,4 +37,16 @@
     }
     document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
     document.addEventListener('DOMContentLoaded', loaded, false);
+</script>
+<script src="/javascripts/jquery.min.js"></script>
+<script src="/javascripts/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+<script>
+    $("a[rel=lightbox]").fancybox({
+        height: 500,
+        width: 700,
+        type: "iframe",
+        showNavArrows: false,
+        scrolling: "no",
+        autoDimensions: false
+    });
 </script>
