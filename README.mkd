@@ -1,11 +1,12 @@
 MuseumVille
 ========================================================================
 
-Museumville is a game based on the digital resources of Europe's museums, libraries and archives. 
-As a Museum Curator, your role is to collect [Europeana](http://www.europeana.eu/portal/aboutus.html) artifacts (Items) and
+Museumville is a game based on the digital resources of Europe's museums,
+libraries and archives. As a Museum Curator, your role is to collect
+[Europeana](http://www.europeana.eu/portal/aboutus.html) artifacts (Items) and
 create Exhibitions with them.
 
-Some people love working with our cultural heritage. Everyone loves to play. 
+Some people love working with our cultural heritage. Everyone loves to play.
 What if we turn work into play?
 
 - Build your own museum
@@ -48,9 +49,11 @@ Generated Europeana value:
 
 ## Origin Popularity ##
 
-Points are gained when visitors leave the exhibit by clicking on a link to the homepage of the item.
+Points are gained when visitors leave the exhibit by clicking on a link to the
+homepage of the item.
 
-(Technical solution: exit page or "pingback" from homepage (probably unfeasible).)
+*[Technical solution: exit page or "pingback" from homepage (probably
+unfeasible).]*
 
 Generated Europeana value:
 
@@ -59,11 +62,37 @@ Generated Europeana value:
 
 ## Categorizing Records ##
 
-Points are gained when curators 
+The free text search can be augmented with and/or complemented by certain
+*sets* of categories. These can be gathered from formal ("top down") thesauri
+and taxonomies, such as published SKOS data (e.g. DBPedia concepts).
+They can also be created bottom-up with ad-hoc tagging processes
+(delicious-style).
 
-Categories: places, periods, persons, subjects/themes/tropes...
+*[The main usability challenge is to make these fun to add, or effectively
+optional. One way is to make them unobtrusive, by integrating them into the
+naming, searching and arrangement (or decoration) activities.]*
+
+Suggested scoring system (draft):
+
+Points are gained when curators *link* to these, or *improve* on
+categorizations.
+
+  - a small but secure flow of points can be gained by creating links to
+    subjects which other curators also use
+  - a large score can be awarded if the curator do one of the following:
+
+    - discover an *unused* category, i.e. hitherto not linked to from any
+      Europeana Item
+    - create a *narrower* category which becomes popular by other curators
+      (either when they find things via the concept, or use it themselves)
+    - *object* to a certain categorisation and is proven right by something
+      like popular vote or elected expert judgement
+
+Categories: places, periods, persons, activities, concepts/themes/tropes...
 
 Generated Europeana value:
 
-  - continuously curated item categorizations (under the hood: linked data in the form of dct:subjects for Items, and categories as Concepts expressed in SKOS.)
+  - continuously curated item categorizations (under the hood: linked data in
+    the form of dct:subjects for Items, and categories as Concepts expressed in
+    SKOS.)
 
