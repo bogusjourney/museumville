@@ -28,9 +28,10 @@ app.configure('production', function(){
 });
 
 app.get('/', function(req, res){
-  res.render('index', {
+  res.render('exhibit', {
     page: {id: 'index', title: 'MuseumVille'},
-    items: ['Item A', 'Item B']
+    exhibit: db.emptyExhibit(),
+    curator: { name: "" }
   });
 });
 

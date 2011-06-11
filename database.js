@@ -20,6 +20,16 @@ DB.prototype = {
     this.users[data.id] = data;
   },
 
+  emptyExhibit: function () {
+    var emptyItem= {
+      "label": {"en": "[Empty]"},
+      "thumbnail": "/images/exhibit_placeholder.png"
+    };
+    return {
+      name: "",
+      items: [emptyItem, emptyItem, emptyItem, emptyItem, emptyItem]
+    }
+  },
   addItem: function (exhibit, item) {
     exhibit.items.push(this.completeItem(item));
   },
