@@ -86,8 +86,8 @@ app.post('/:userId/exhibit/:exhibitId', function(req, res) {
   if (!curator) { res.send(404); return; }
   var exhibit = curator.exhibits[parseInt(req.params.exhibitId)];
   if (!exhibit) { res.send(404); return; }
-  if (req.accepts('json')) {
-    db.addItem(exhibit, req.body.url);
+  if (req.accepts('json') && req.body.subject) {
+    db.addItem(exhibit, req.body);
     res.send(200);
   }
 });

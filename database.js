@@ -20,20 +20,17 @@ DB.prototype = {
     this.users[data.id] = data;
   },
 
-  addItem: function (exhibit, recordUrl) {
-    exhibit.items.push(this.fetchItemData(recordUrl));
+  addItem: function (exhibit, item) {
+    exhibit.items.push(this.completeItem(item));
   },
 
-  fetchItemData: function (recordUrl) {
-    // TODO
-    return {
-      "subject": recordUrl,
-      "label": {"en": null},
-      "thumbnail": recordUrl,
-      "homepage": null,
-      "categories": []
-    }
-;
+  completeItem: function (item) {
+    // TODO: lookup record from subject?
+    if (!item.categories)
+      item.categories = [];
+    if (!item.homepage)
+      item.homepage = null;
+    return item;
   }
 
 };

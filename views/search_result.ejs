@@ -1,10 +1,16 @@
 <script>
   $(function () {
     $('.itemlist > li > a[href]').click(function() {
-      var itemUrl = $(this).attr('href');
+      var $it = $(this);
+      // TODO: user from session...
       var exhibitSlug = prompt('Add to exhibit:', "/ted/exhibit/0");
       if (exhibitSlug) {
-        $.post(exhibitSlug, {url: itemUrl}, function () {}, "json");
+        var item = {
+          subject: $it.attr('href'),
+          label: {"en": $('span', $it).text()},
+          thumbnail: $('img', $it).attr('src')
+        };
+        $.post(exhibitSlug, item, function () {}, "json");
       }
       return false;
     });
