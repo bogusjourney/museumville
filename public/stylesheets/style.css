@@ -92,8 +92,7 @@ h1, h2, h3, h4, h5, h6 {
             font-size: 3em;
             margin: 20px 0 0;
         }
-    #wrapper #last {
-    }
+    #wrapper #last {}
     #wrapper li {
         float: left;
         margin: 0;
@@ -117,3 +116,13 @@ h1, h2, h3, h4, h5, h6 {
 .itemlist li img {
     height: 100%;
 }
+#search_form {
+    margin: 20px 50px 0;
+}
+    #search_form input {
+        border: 1px solid #ccc;
+        padding: 2px;
+    }
+    #search_form input, #search_form button {
+        font-size: 2em;
+    }
