@@ -45,10 +45,13 @@ DB.prototype = {
       var it = items[i];
       if (!it.subject) {
         items[i] = newItem;
-        return;
+        added = true;
+        break;
       }
     }
-    items.push(newItem);
+    if (!added) {
+      items.push(newItem);
+    }
     this.persist(curator);
   },
 
@@ -62,8 +65,9 @@ DB.prototype = {
   },
 
   persist: function (curator) {
-    // TODO: save to disk
-    console.log(JSON.stringify(curator, null, 2));
+    var json = JSON.stringify(curator, null, 2)
+    // TODO: this.saveToDisk(getFileFor(curator), json);
+    console.log(json);
   }
 
 };
