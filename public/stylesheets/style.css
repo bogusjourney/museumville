@@ -87,6 +87,7 @@ h1, h2, h3, h4, h5, h6 {
             margin: 0;
             text-transform: uppercase;
         }
+        #first h1 input { font-size: 0.8em; }
         #first p {
             font-size: 3em;
             margin: 20px 0 0;

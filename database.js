@@ -26,7 +26,7 @@ DB.prototype = {
       "thumbnail": "/images/exhibit_placeholder.png"
     };
     return {
-      name: "Name your exhibit",
+      name: "[Name your exhibit]",
       items: [emptyItem, emptyItem, emptyItem, emptyItem, emptyItem]
     }
   },

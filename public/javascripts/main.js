@@ -40,6 +40,13 @@ var pageHandlers = {
 
 };
 
+$(function() {
+  $('.editable').inlineEdit({
+    buttons: ""
+  });
+});
+
+
 $(function () {
   var pageId = $('body').attr('id');
   var pageHandler = pageHandlers[pageId];
