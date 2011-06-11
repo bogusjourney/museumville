@@ -1,10 +1,7 @@
 #!/bin/bash
 
 # server app dependencies
-npm install express
-npm install ejs
-npm install request
-npm install xml2js
+npm install -d
 
 # client app dependencies
 
