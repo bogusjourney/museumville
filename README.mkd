@@ -1,6 +1,14 @@
 MuseumVille
 ========================================================================
 
+Some people love working with cultural heritage. Everyone loves to play. 
+What if we turned work into play?
+
+- Build your own museum
+- Hunt for treasures
+- Show others
+- Keep your exhibitions in order
+
 As a Museum Curator, your role is to collect Europeana artifacts (Items) and
 create Exhibitions with them.
 
