@@ -9,6 +9,7 @@
         height: 150px;
     }
 .jcarousel-skin-ville .jcarousel-item {
+    min-width: 150px;
     height: 150px;
 }
     .jcarousel-skin-ville .jcarousel-item-horizontal {
