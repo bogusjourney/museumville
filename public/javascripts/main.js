@@ -4,18 +4,9 @@
 */
 var pageHandlers = {
 
-  exhibit: function () {
+  index: exhibitHandler,
 
-    $("a[rel=lightbox]").fancybox({
-      height: 500,
-      width: 700,
-      type: "iframe",
-      showNavArrows: false,
-      scrolling: "no",
-      autoDimensions: false
-    });
-
-  },
+  exhibit: exhibitHandler,
 
   search: function () {
 
@@ -48,6 +39,18 @@ $(function() {
   });
 });
 
+function exhibitHandler() {
+
+    $("a[rel=lightbox]").fancybox({
+      height: 500,
+      width: 700,
+      type: "iframe",
+      showNavArrows: false,
+      scrolling: "no",
+      autoDimensions: false
+    });
+
+}
 
 $(function () {
   var pageId = $('body').attr('id');

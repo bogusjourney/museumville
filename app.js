@@ -30,7 +30,7 @@ app.configure('production', function(){
 app.get('/', function(req, res){
   res.render('exhibit', {
     page: {id: 'index', title: 'MuseumVille'},
-    exhibit: db.emptyExhibit(),
+    exhibit: db.newEmptyExhibit(),
     curator: null
   });
 });
@@ -95,6 +95,9 @@ app.get('/:userId/exhibit/:exhibitId', function(req, res) {
   if (!curator) { res.send(404); return; }
   var exhibit = curator.exhibits[parseInt(req.params.exhibitId)];
   if (!exhibit) { res.send(404); return; }
+  for (var i=exhibit.items.length; i < 5; i++) {
+    exhibit.items.push(db.newEmptyItem());
+  }
   res.render('exhibit', {
     page: {id: 'exhibit', title: "MuseumVille - " + curator.name + " - " + exhibit.name},
     curator: curator,

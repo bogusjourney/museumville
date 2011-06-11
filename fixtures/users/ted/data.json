@@ -1,24 +1,5 @@
 {
   "id": "ted",
-  "name": "Ted",
-  "exhibits": [
-    {
-      "name": "Armour Time",
-      "items": [
-        {
-          "subject": "http://www.europeana.eu/resolve/record/09405k/4ED40762EE00C23F96FED769355D88922671DEBB",
-          "label": {"en": "Body Armour"},
-          "thumbnail": "http://europeanastatic.eu/api/image?uri=http%3A%2F%2Fwww.culturegrid.org.uk%2Fdpp%2Fresource%2F1573478%2Fstream%2Fthumbnail_image_jpeg&size=FULL_DOC&type=IMAGE",
-          "homepage": "http://www.thebowesmuseum.org.uk/collections/objects/category/1/792/",
-          "categories": [
-            "italy",
-            "16th_century"
-          ]
-        }
-      ],
-      "categories": [
-        "armoury"
-      ]
-    }
-  ]
+  "name": "Ted Logan",
+  "exhibits": []
 }

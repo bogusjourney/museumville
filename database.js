@@ -20,18 +20,34 @@ DB.prototype = {
     this.users[data.id] = data;
   },
 
-  emptyExhibit: function () {
-    var emptyItem= {
-      "label": {"en": "[Empty]"},
-      "thumbnail": "/images/exhibit_placeholder.png"
-    };
+  newEmptyExhibit: function () {
+    var empty = this.newEmptyItem();
     return {
       name: "[Name your exhibit]",
-      items: [emptyItem, emptyItem, emptyItem, emptyItem, emptyItem]
+      items: [empty, empty, empty, empty, empty]
     }
   },
-  addItem: function (exhibit, item) {
-    exhibit.items.push(this.completeItem(item));
+
+  newEmptyItem: function () {
+    return {
+      "subject": "",
+      "label": {"en": "[Empty]"},
+      "thumbnail": "/images/exhibit_placeholder.png",
+      "homepage": ""
+    };
+  },
+
+  addItem: function (exhibit, newItem) {
+    var newItem = this.completeItem(newItem);
+    var items = exhibit.items;
+    for (var i=0, ln=items.length; i < ln; i++) {
+      var it = items[i];
+      if (!it.subject) {
+        items[i] = newItem;
+        break;
+      }
+    }
+    items.push(newItem);
   },
 
   completeItem: function (item) {
