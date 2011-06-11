@@ -55,7 +55,7 @@ app.get('/search', function(req, res) {
         qf: 'TYPE:IMAGE',
         wskey: config.europeana.apiKey});
 
-  var clientReq = request({uri: searchUri}, function(error, clientRes, body) {
+  request({uri: searchUri}, function(error, clientRes, body) {
     if (!error && clientRes.statusCode == 200) {
       var parser = new xml2js.Parser();
       parser.addListener('end', function(result) {
@@ -95,28 +95,29 @@ app.get('/:userId', function(req, res) {
   });
 });
 
+app.all('/:userId/exhibit/:exhibitId', function(req, res, next) {
+  req.curator = db.users[req.params.userId];
+  if (!req.curator) { res.send(404); return; }
+  req.exhibit = req.curator.exhibits[parseInt(req.params.exhibitId)];
+  if (!req.exhibit) { res.send(404); return; }
+  next();
+});
+
 app.get('/:userId/exhibit/:exhibitId', function(req, res) {
-  var curator = db.users[req.params.userId];
-  if (!curator) { res.send(404); return; }
-  var exhibit = curator.exhibits[parseInt(req.params.exhibitId)];
-  if (!exhibit) { res.send(404); return; }
-  for (var i=exhibit.items.length; i < 5; i++) {
-    exhibit.items.push(db.newEmptyItem());
+  for (var i=req.exhibit.items.length; i < 5; i++) {
+    req.exhibit.items.push(db.newEmptyItem());
   }
   res.render('exhibit', {
-    page: {id: 'exhibit', title: "MuseumVille - " + curator.name + " - " + exhibit.name},
-    curator: curator,
-    exhibit: exhibit
+    page: {id: 'exhibit',
+      title: "MuseumVille - " + req.curator.name + " - " + req.exhibit.name},
+    curator: req.curator,
+    exhibit: req.exhibit
   });
 });
 
 app.post('/:userId/exhibit/:exhibitId', function(req, res) {
-  var curator = db.users[req.params.userId];
-  if (!curator) { res.send(404); return; }
-  var exhibit = curator.exhibits[parseInt(req.params.exhibitId)];
-  if (!exhibit) { res.send(404); return; }
   if (req.accepts('json') && req.body.subject) {
-    db.addItem(curator, exhibit, req.body);
+    db.addItem(req.curator, req.exhibit, req.body);
     res.send(200);
   }
 });

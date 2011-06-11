@@ -2,7 +2,7 @@
 <ul>
   <% curator.exhibits.forEach(function(exhibit, i) { %>
     <li>
-      <a href="<%=  curator.id + '/exhibit/' + i %>"><%= exhibit.name %></a>
+      <a href="<%= 'exhibit/' + i %>"><%= exhibit.name %></a>
     </li>
   <% }); %>
 </ul>
