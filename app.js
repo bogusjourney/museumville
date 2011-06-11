@@ -5,13 +5,10 @@ var request = require('request');
 var database = require('./database');
 var xml2js = require('xml2js');
 
-
 var config = database.loadJSON(__dirname + "/siteconf.json", "utf-8");
 var dataDir = config.dataDir || __dirname + "/fixtures";
 var db = database.init(dataDir);
 var app = module.exports = express.createServer();
-//var nowjs = require('now');
-//var everyone = nowjs.initialize(httpServer);
 
 app.configure(function(){
   app.set('views', __dirname + '/views');
@@ -30,10 +27,9 @@ app.configure('production', function(){
   app.use(express.errorHandler());
 });
 
-
 app.get('/', function(req, res){
   res.render('index', {
-    title: 'MuseumVille',
+    page: {id: 'index', title: 'MuseumVille'},
     items: ['Item A', 'Item B']
   });
 });
@@ -42,9 +38,12 @@ app.get('/search', function(req, res) {
   var searchString = req.param('q');
   if (!searchString) {
     res.render('search', {
-        title: 'Add to your exhibit',
-        items: [],
-        searchString: searchString
+      items: [],
+      searchString: searchString,
+      page: {
+        id: 'search',
+        title: 'Add to your exhibit'
+      }
     });
     return;
   }
@@ -55,9 +54,12 @@ app.get('/search', function(req, res) {
       var parser = new xml2js.Parser();
       parser.addListener('end', function(result) {
         res.render('search', {
-            title: 'search',
             items: result.channel.item,
-            searchString: searchString
+            searchString: searchString,
+            page: {
+              id: 'search',
+              title: 'Add to your exhibit'
+            }
         });
       });
       parser.parseString(body);
@@ -66,15 +68,14 @@ app.get('/search', function(req, res) {
       res.send(500); return;
     }
   });
-
 });
 
 app.get('/:userId', function(req, res) {
   var data = db.users[req.params.userId];
   if (!data) { res.send(404); return; }
   res.render('curator', {
-    'title': "MuseumVille - " + data.name,
-    'curator': data
+    page: {id: 'curator', title: "MuseumVille - " + data.name},
+    curator: data
   });
 });
 
@@ -84,9 +85,9 @@ app.get('/:userId/exhibit/:exhibitId', function(req, res) {
   var exhibit = curator.exhibits[parseInt(req.params.exhibitId)];
   if (!exhibit) { res.send(404); return; }
   res.render('exhibit', {
-    'title': "MuseumVille - " + curator.name + " - " + exhibit.name,
-    'curator': curator,
-    'exhibit': exhibit
+    page: {id: 'exhibit', title: "MuseumVille - " + curator.name + " - " + exhibit.name},
+    curator: curator,
+    exhibit: exhibit
   });
 });
 

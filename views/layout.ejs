@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <head>
-        <title><%= title %></title>
+        <title><%= page.title %></title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
         <link rel="stylesheet" href="/stylesheets/style.css">
         <link rel="stylesheet" href="/javascripts/fancybox/jquery.fancybox-1.3.4.css">
@@ -11,7 +11,7 @@
         <script src="/javascripts/iscroll.js"></script>
         <script src="/javascripts/main.js"></script>
     </head>
-    <body>
+    <body id="<%= page.id %>">
         <%- body %>
     </body>
 </html>

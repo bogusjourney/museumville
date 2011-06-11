@@ -1,0 +1,618 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<script type="text/javascript" src="outliner.js"></script><style type="text/css">
+			
+			
+			th {
+			vertical-align: bottom;
+			
+			}
+			
+			td {
+			vertical-align: top;
+			}
+			
+			td,th {
+			
+			empty-cells: show;
+			}
+			
+			.top-right-border {
+			
+			}
+			
+			.no-border {
+			border-bottom: 0px;
+			border-left: 0px;
+			}
+			
+			
+			
+			
+			table {
+			
+			font-family: Helvetica, sans-serif;
+			font-size: 12px;
+						
+			
+			}
+
+			
+			
+			.wholeDocument {
+			
+	
+			}
+		
+			
+			td.subcell {
+			border: none;
+			}
+			
+			td.content {
+			padding-left: 4px;
+			padding-bottom: 2px;
+			padding-top: 1px;
+			padding-right: 3px;
+			}
+			
+			.full {
+			height: 100%;
+			}
+			
+			.heighthack {
+			height: 8px;
+			}
+			
+			div.titlepadding { 
+			padding-right:3px;
+			padding-left:6px;
+			padding-bottom:3px;
+			padding-top: 2px;
+			}
+			
+			
+					.summary_node {
+						background: rgba(0,0,0,.12);
+						margin-bottom: 1px;
+					}
+				
+			
+			div.column {   
+			padding-right: 3px;
+			padding-left: 4px;
+			padding-top: 1px;
+			padding-bottom: 2px;
+			margin-right: 1px;
+			}
+			
+			.labelpadding {
+			padding-right: 3px;
+			padding-top: 1px;
+			padding-left: 2px;
+			}
+			
+			.indicator {
+			white-space: nowrap;
+			text-align:right;
+			margin-right: 0px;
+			vertical-align: top;
+			padding-top: 1px;
+			padding-left: 0px;
+			}
+			
+			.wholedocgutter {
+			
+			}
+			
+			div.row {
+			}
+			
+			div.headerRow {
+			}
+			
+			.expanded {
+			display: inline;
+			}
+			.collapsed {
+			display: none;
+			}
+			
+            div.palette-hit-zone {
+                position: fixed;
+                bottom: 0px;
+				height: 33%;
+                left:50%;
+                width: 66%;
+                margin-left: -33%;
+            }
+
+			div.floating-palette {
+                -webkit-border-radius: 5px;
+                -webkit-transition: opacity is fade-in-out;
+                -webkit-transition-duration: 1s;
+				background-color: rgb(64, 64, 64);
+                opacity:0.7;
+				width: 88px;
+				height: 44px;
+                position: fixed;
+                bottom: 20px;
+                left: 50%;
+                margin-left: -44px;
+			}
+            
+            div.palette-cell {
+                opacity:1;
+                margin-top: 6px;
+                margin-bottom: 6px;
+                position: absolute;
+                height: 32px;
+                width: 32px;
+            }
+            
+            div.cell-divider {
+                position: absolute;
+                margin-top: 6px;
+                margin-bottom: 6px;
+                margin-left: 44px;
+                height: 32px;
+                width:0px;
+                position:absolute;
+                left:0px;
+                border-right:rgb(207, 207, 207) 2px solid;
+            }
+
+			
+			
+			
+			.note { 
+			padding-left: 5px;
+			padding-right: 3px; 
+			border: none; 
+			color:rgb(84,84,84) ;  font-style: italic;font-size: 11px;font-style: italic;font-size: 11px;
+			}
+			
+			/* Total table width is 881
+			Adjusted table width is 933 */
+			
+			.wholething {
+				width: auto;
+			}
+			
+			
+			table.row {
+				
+						width: 881px;
+						
+			
+			}
+			
+			
+    .col_width1 { 
+        width: 881px;  /* Actual width is 881 */
+    }
+
+    .col1 { 
+        
+    }
+
+    .colbackground1 { 
+        
+    }
+
+			
+			/* Level Styles */
+			
+			
+    .columntitle { 
+        text-decoration:  underline;font-weight: 900;  
+    }
+
+    .level1 { 
+        font-size: 33px;
+    }
+
+    .levelcolor1 { 
+        
+    }
+
+    .levelguttercolor1 { 
+        
+    }
+
+    .level2 { 
+        font-size: 24px;
+    }
+
+    .levelcolor2 { 
+        
+    }
+
+    .levelguttercolor2 { 
+        
+    }
+
+    .ns-Highlight { 
+        }
+
+    .ns-Citation { 
+        text-decoration:  underline;}
+
+    .ns-Emphasis { 
+        font-style: italic;}
+
+    .ns-bg-Highlight { 
+        background-color:rgb(254,250,101) ;  }
+
+    .ns-bg-Citation { 
+        }
+
+    .ns-bg-Emphasis { 
+        }
+
+    .ns-gutter-Highlight { 
+        }
+
+    .ns-gutter-Citation { 
+        }
+
+    .ns-gutter-Emphasis { 
+        }
+</style>
+</head>
+<body class="wholeDocument"><table cellspacing="0" cellpadding="0" class="top-right-border"><tr><td class="wholething no-border">
+<!--Column Titles--><table cellspacing="0" border="0" cellpadding="0" class="headerRow heighthack"><tr><td class=" colbackground1 col_width1"><div class="columntitle titlepadding">HACK4EUROPE Stockholm 2011-06-11<br>
+</div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor1"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level1 levelguttercolor1" style="width: 9px;"></td>
+<td class=" subcell wholedocgutter indicator level1 levelguttercolor1" style="width: 28px;">
+<img onmousedown="ioSwitch('pdL-2-4CeZ_A', event.shiftKey)" id="idL-2-4CeZ_A" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level1 subcell">We are team Bogusjourney<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pdL-2-4CeZ_A" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">Experienced Swedish developers and designers<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">Teamed up yesterday<br>
+</td>
+</tr></table></div></td></tr></table>
+</div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor1"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level1 levelguttercolor1" style="width: 9px;"></td>
+<td class=" subcell wholedocgutter indicator level1 levelguttercolor1" style="width: 28px;">
+<img onmousedown="ioSwitch('pb5f21Vr98Dp', event.shiftKey)" id="ib5f21Vr98Dp" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level1 subcell">Europeana is exciting but a little scary for developers<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pb5f21Vr98Dp" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">"How do we give all this culture to ordinary users?"<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img onmousedown="ioSwitch('pcpV69V2jLOL', event.shiftKey)" id="icpV69V2jLOL" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">Focus on that question and you immediately become defensive<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pcpV69V2jLOL" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level3 subcell" style="font-size: 24px;">Users don't like the same stuff you do<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level3 subcell" style="font-size: 24px;">Searching is "hit and miss"<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level3 subcell" style="font-size: 24px;">Finished products are never easy/exciting/useful enough<br>
+</td>
+</tr></table></div></td></tr></table>
+</div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">Doing all the hard work yourself won't work!<br>
+</td>
+</tr></table></div></td></tr></table>
+</div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor1"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level1 levelguttercolor1" style="width: 9px;"></td>
+<td class=" subcell wholedocgutter indicator level1 levelguttercolor1" style="width: 28px;">
+<img onmousedown="ioSwitch('pgao3RsJklEN', event.shiftKey)" id="igao3RsJklEN" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level1 subcell">Let's ask better questions<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pgao3RsJklEN" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">Some people love working with cultural heritage<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">Everyone likes to play<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img onmousedown="ioSwitch('pm6wLHLsR-Bc', event.shiftKey)" id="im6wLHLsR-Bc" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">What if we turn work into play?<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pm6wLHLsR-Bc" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level3 subcell" style="font-size: 26px;">Build your own museum<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level3 subcell" style="font-size: 26px;">Hunt for treasures<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level3 subcell" style="font-size: 26px;">Show others<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level3 subcell" style="font-size: 26px;">Keep things in order<br>
+</td>
+</tr></table></div></td></tr></table>
+</div>
+</div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor1"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level1 levelguttercolor1" style="width: 9px;"></td>
+<td class=" subcell wholedocgutter indicator level1 levelguttercolor1" style="width: 28px;">
+<img onmousedown="ioSwitch('ppPMS2cFx7o9', event.shiftKey)" id="ipPMS2cFx7o9" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level1 subcell">Demo <span class="" style="font-weight: 900;  ">Museumville</span><br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="ppPMS2cFx7o9" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">Smooth simple graphics<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">Familiar game dynamics<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img onmousedown="ioSwitch('pelqOwlJz2w1', event.shiftKey)" id="ielqOwlJz2w1" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">How do you play?<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pelqOwlJz2w1" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level3 subcell" style="font-size: 24px;">Create your own exhibition<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level3 subcell" style="font-size: 24px;">Find some pictures<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level3 subcell" style="font-size: 24px;">Add them to your exhibition<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level3 subcell" style="font-size: 24px;">Get feedback from guide<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level3 subcell" style="font-size: 24px;">See what others think<br>
+</td>
+</tr></table></div></td></tr></table>
+</div>
+</div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor1"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level1 levelguttercolor1" style="width: 9px;"></td>
+<td class=" subcell wholedocgutter indicator level1 levelguttercolor1" style="width: 28px;">
+<img onmousedown="ioSwitch('pbMOhrtRvE8s', event.shiftKey)" id="ibMOhrtRvE8s" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level1 subcell">Future<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pbMOhrtRvE8s" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img onmousedown="ioSwitch('pjmdqKI30a6u', event.shiftKey)" id="ijmdqKI30a6u" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">Turn  <span><a href="http://www.museumville.eu/">www.museumville.eu</a></span>  into a working service<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pjmdqKI30a6u" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level3 subcell" style="font-size: 18px;">user registration<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level3 subcell" style="font-size: 18px;">production server deployment<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor3"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level3 levelguttercolor3" style="width: 41px;"></td>
+<td class=" subcell wholedocgutter indicator level3 levelguttercolor3" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level3 subcell" style="font-size: 18px;">better error handling<br>
+</td>
+</tr></table></div></td></tr></table>
+</div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">Observe real users and improve playability<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">Make it easy to tweet and facebook your own exhibitions<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">Help museums setup exhibitions based on specific collections<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">Implement crowdsourcing of categorization<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">Commercialization?<br>
+</td>
+</tr></table></div></td></tr></table>
+</div>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor1"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level1 levelguttercolor1" style="width: 9px;"></td>
+<td class=" subcell wholedocgutter indicator level1 levelguttercolor1" style="width: 28px;">
+<img onmousedown="ioSwitch('pb2QDlgK9zfd', event.shiftKey)" id="ib2QDlgK9zfd" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" border="0" alt="&gt;" src="Collapsed.png" title="expand"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level1 subcell">Thank you<br>
+</td>
+</tr></table></div></td></tr></table>
+<div id="pb2QDlgK9zfd" class="collapsed">
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">Code is on Github<br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell"> <span><a href="https://github.com/bogusjourney/museumville">github.com—museumville</a></span><br>
+</td>
+</tr></table></div></td></tr></table>
+<table cellspacing="0" border="0" cellpadding="0" class="row heighthack"><tr><td class=" col1 colbackground1 col_width1" style=""><div class=" full levelcolor2"><table border="0" cellspacing="0" cellpadding="0" style="height:100%" class=" col_width1 col1"><tr>
+<td class=" subcell wholedocgutter level2 levelguttercolor2" style="width: 25px;"></td>
+<td class=" subcell wholedocgutter indicator level2 levelguttercolor2" style="width: 28px;">
+<img border="0" style="margin-left: 3px; margin-right:3px; margin-top: 3px;" alt="*" src="LeafRowHandle.png"><img border="0" style="margin-left: 2px; margin-right: 2px; margin-top: 3px;" alt=" " src="Unchecked.png">
+</td>
+<td class=" content level2 subcell">Let's play some more! <br>
+</td>
+</tr></table></div></td></tr></table>
+</div>
+</td></tr></table></body>
+</html>
