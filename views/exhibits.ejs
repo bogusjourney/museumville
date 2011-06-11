@@ -1,0 +1,12 @@
+<ul id="users">
+<% for(var i=0; i<users.length; i++) { %>
+  <li class="user">
+    <h2><%= users[i].name %></h2>
+    <ul id="exhibits">
+    <% for(var j=0; j<users[i].exhibits.length; j++) { %>
+      <li class="exhibit"><a href="/<%= users[i].id %>/exhibit/<%= j %>"><%= users[i].exhibits[j].name %></a></li>
+    <% } %>
+    </ul>
+  </li>
+<% } %>
+</ul>

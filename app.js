@@ -71,6 +71,16 @@ app.get('/search', function(req, res) {
   });
 });
 
+app.get('/exhibits', function(req, res) {
+  var bill = db.users['bill'];
+  var ted = db.users['ted'];
+  var users = [bill, ted];
+  res.render('exhibits', {
+    page: {id: 'exhibits', title: "MuseumVille - Exhibits" },
+    users: users
+  });
+});
+
 app.get('/:userId', function(req, res) {
   var data = db.users[req.params.userId];
   if (!data) { res.send(404); return; }
