@@ -31,7 +31,7 @@ app.get('/', function(req, res){
   res.render('exhibit', {
     page: {id: 'index', title: 'MuseumVille'},
     exhibit: db.emptyExhibit(),
-    curator: { name: "" }
+    curator: null
   });
 });
 

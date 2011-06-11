@@ -4,7 +4,11 @@
             <ul>
                 <li id="first">
                     <h1><%= exhibit.name %></h1>
-                    <p>Curated by <%= curator.name %></p>
+                    <% if(curator != null) { %>
+                      <p>Curated by <%= curator.name %></p>
+                    <% } else { %>
+                      <p><a href="/ted/exhibit/0">Log in</a></p>
+                    <% } %>
                 </li>
                 <% exhibit.items.forEach(function (item) { %>
                     <li>
