@@ -1,0 +1,106 @@
+.jcarousel-skin-ville .jcarousel-container {}
+
+    .jcarousel-skin-ville .jcarousel-direction-rtl {
+        direction: rtl;
+    }
+
+    .jcarousel-skin-ville .jcarousel-container-horizontal {
+        padding: 20px 40px;
+    }
+
+.jcarousel-skin-ville .jcarousel-clip {
+    overflow: hidden;
+    width: 100%;
+}
+
+    .jcarousel-skin-ville .jcarousel-clip-horizontal {
+        height: 150px;
+    }
+
+.jcarousel-skin-ville .jcarousel-item {
+    height: 150px;
+}
+
+    .jcarousel-skin-ville .jcarousel-item-horizontal {
+        margin-left: 0;
+        margin-right: 10px;
+    }
+
+    .jcarousel-skin-ville .jcarousel-direction-rtl .jcarousel-item-horizontal {
+        margin-left: 10px;
+        margin-right: 0;
+    }
+
+    .jcarousel-skin-ville .jcarousel-item-placeholder {
+        background: #fff;
+        color: #000;
+    }
+
+/**
+ *  Horizontal Buttons
+ */
+.jcarousel-skin-ville .jcarousel-next-horizontal {
+    position: absolute;
+    top: 72px;
+    right: 5px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: transparent url(next-horizontal.png) no-repeat 0 0;
+}
+
+    .jcarousel-skin-ville .jcarousel-direction-rtl .jcarousel-next-horizontal {
+        left: 5px;
+        right: auto;
+        background-image: url(prev-horizontal.png);
+    }
+
+    .jcarousel-skin-ville .jcarousel-next-horizontal:hover,
+    .jcarousel-skin-ville .jcarousel-next-horizontal:focus {
+        background-position: -32px 0;
+    }
+
+    .jcarousel-skin-ville .jcarousel-next-horizontal:active {
+        background-position: -64px 0;
+    }
+
+    .jcarousel-skin-ville .jcarousel-next-disabled-horizontal,
+    .jcarousel-skin-ville .jcarousel-next-disabled-horizontal:hover,
+    .jcarousel-skin-ville .jcarousel-next-disabled-horizontal:focus,
+    .jcarousel-skin-ville .jcarousel-next-disabled-horizontal:active {
+        cursor: default;
+        background-position: -96px 0;
+    }
+
+.jcarousel-skin-ville .jcarousel-prev-horizontal {
+    position: absolute;
+    top: 72px;
+    left: 5px;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background: transparent url(prev-horizontal.png) no-repeat 0 0;
+}
+
+    .jcarousel-skin-ville .jcarousel-direction-rtl .jcarousel-prev-horizontal {
+        left: auto;
+        right: 5px;
+        background-image: url(next-horizontal.png);
+    }
+
+    .jcarousel-skin-ville .jcarousel-prev-horizontal:hover,
+    .jcarousel-skin-ville .jcarousel-prev-horizontal:focus {
+        background-position: -32px 0;
+    }
+
+    .jcarousel-skin-ville .jcarousel-prev-horizontal:active {
+        background-position: -64px 0;
+    }
+
+    .jcarousel-skin-ville .jcarousel-prev-disabled-horizontal,
+    .jcarousel-skin-ville .jcarousel-prev-disabled-horizontal:hover,
+    .jcarousel-skin-ville .jcarousel-prev-disabled-horizontal:focus,
+    .jcarousel-skin-ville .jcarousel-prev-disabled-horizontal:active {
+        cursor: default;
+        background-position: -96px 0;
+    }
