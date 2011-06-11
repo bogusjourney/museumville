@@ -1,15 +1,15 @@
 MuseumVille
 ========================================================================
 
-Some people love working with cultural heritage. Everyone loves to play. 
-What if we turned work into play?
+Some people love working with our cultural heritage. Everyone loves to play. 
+What if we turn work into play?
 
 - Build your own museum
 - Hunt for treasures
 - Show others
 - Keep your exhibitions in order
 
-As a Museum Curator, your role is to collect Europeana artifacts (Items) and
+Museumville is a game based on the digital resources of Europe's museums, libraries and archives. As a Museum Curator, your role is to collect [Europeana](http://www.europeana.eu/portal/aboutus.html) artifacts (Items) and
 create Exhibitions with them.
 
 # Definition of Terms #
