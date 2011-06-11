@@ -1,4 +1,5 @@
 siteconf.json
+.DS_Store
 
 /museumville.komodoproject
 /node_modules/
