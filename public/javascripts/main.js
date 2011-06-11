@@ -10,6 +10,8 @@ var pageHandlers = {
 
   search: function () {
 
+    $('#carousel').jcarousel();
+
     $('.itemlist > li > a[href]').click(function () {
       var $it = $(this);
       var exhibitSlug = window.parent.location.pathname;

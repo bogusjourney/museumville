@@ -19,28 +19,3 @@
     <p>No images matches your search</p>
   <% } %>
 <% } %>
-
-<script src="/javascripts/jcarousel/jquery.jcarousel.min.js"></script>
-<script>
-  $(document).ready(function() {
-    $('#carousel').jcarousel();
-  });
-</script>
-<script>
-  $(document).ready(function() {
-    $('.itemlist > li > a[href]').click(function() {
-      var $it = $(this);
-      // TODO: user from session...
-      var exhibitSlug = prompt('Add to exhibit:', "/ted/exhibit/0");
-      if (exhibitSlug) {
-        var item = {
-          subject: $it.attr('href'),
-          label: {"en": $('span', $it).text()},
-          thumbnail: $('img', $it).attr('src')
-        };
-        $.post(exhibitSlug, item, function () {}, "json");
-      }
-      return false;
-    });
-  });
-</script>

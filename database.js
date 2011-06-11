@@ -31,32 +31,39 @@ DB.prototype = {
   newEmptyItem: function () {
     return {
       "subject": "",
-      "label": {"en": "[Empty]"},
+      "label": {"en": ""},
       "thumbnail": "/images/exhibit_placeholder.png",
       "homepage": ""
     };
   },
 
-  addItem: function (exhibit, newItem) {
+  addItem: function (curator, exhibit, newItem) {
     var newItem = this.completeItem(newItem);
     var items = exhibit.items;
+    var added = false;
     for (var i=0, ln=items.length; i < ln; i++) {
       var it = items[i];
       if (!it.subject) {
         items[i] = newItem;
-        break;
+        return;
       }
     }
     items.push(newItem);
+    this.persist(curator);
   },
 
   completeItem: function (item) {
-    // TODO: lookup record from subject?
+    // TODO: lookup record from subject, save title, better image link, description...
     if (!item.categories)
       item.categories = [];
     if (!item.homepage)
       item.homepage = null;
     return item;
+  },
+
+  persist: function (curator) {
+    // TODO: save to disk
+    console.log(JSON.stringify(curator, null, 2));
   }
 
 };

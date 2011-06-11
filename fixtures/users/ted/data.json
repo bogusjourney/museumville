@@ -1,5 +1,10 @@
 {
   "id": "ted",
-  "name": "Ted Logan",
-  "exhibits": []
+  "name": "Ted",
+  "exhibits": [
+    {
+      "name": "Armour Time",
+      "items": []
+    }
+  ]
 }

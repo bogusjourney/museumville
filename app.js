@@ -1,5 +1,6 @@
 var sys = require('sys');
 var http = require('http');
+var querystring = require('querystring');
 var express = require('express');
 var request = require('request');
 var database = require('./database');
@@ -48,8 +49,13 @@ app.get('/search', function(req, res) {
     });
     return;
   }
-  var searchUri = 'http://api.europeana.eu/api/opensearch.rss?searchTerms=' +
-      searchString + '&qf=TYPE:IMAGE&wskey=' + config.europeana.apiKey;
+  var searchUri = 'http://api.europeana.eu/api/opensearch.rss?' +
+      querystring.stringify({
+        searchTerms: searchString,
+        qf: 'TYPE:IMAGE',
+        wskey: config.europeana.apiKey});
+  ;
+
   var clientReq = request({uri: searchUri}, function(error, clientRes, body) {
     if (!error && clientRes.statusCode == 200) {
       var parser = new xml2js.Parser();
@@ -111,7 +117,7 @@ app.post('/:userId/exhibit/:exhibitId', function(req, res) {
   var exhibit = curator.exhibits[parseInt(req.params.exhibitId)];
   if (!exhibit) { res.send(404); return; }
   if (req.accepts('json') && req.body.subject) {
-    db.addItem(exhibit, req.body);
+    db.addItem(curator, exhibit, req.body);
     res.send(200);
   }
 });
