@@ -41,7 +41,11 @@ app.get('/', function(req, res){
 app.get('/search', function(req, res) {
   var searchString = req.param('q');
   if (!searchString) {
-    res.render('search', { title: 'search'});
+    res.render('search', {
+        title: 'Add to your exhibit',
+        items: [],
+        searchString: searchString
+    });
     return;
   }
   var searchUri = 'http://api.europeana.eu/api/opensearch.rss?searchTerms=' +
@@ -50,11 +54,16 @@ app.get('/search', function(req, res) {
     if (!error && clientRes.statusCode == 200) {
       var parser = new xml2js.Parser();
       parser.addListener('end', function(result) {
-        res.render('search_result', {items: result.channel.item, title: 'search'});
+        res.render('search', {
+            title: 'search',
+            items: result.channel.item,
+            searchString: searchString
+        });
       });
       parser.parseString(body);
     } else {
-      console.log('crap');
+      console.log("Could not contact Europeana");
+      res.send(500); return;
     }
   });
 

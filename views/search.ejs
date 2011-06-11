@@ -1,5 +1,41 @@
+<script>
+  $(function () {
+    $('.itemlist > li > a[href]').click(function() {
+      var $it = $(this);
+      // TODO: user from session...
+      var exhibitSlug = prompt('Add to exhibit:', "/ted/exhibit/0");
+      if (exhibitSlug) {
+        var item = {
+          subject: $it.attr('href'),
+          label: {"en": $('span', $it).text()},
+          thumbnail: $('img', $it).attr('src')
+        };
+        $.post(exhibitSlug, item, function () {}, "json");
+      }
+      return false;
+    });
+  });
+</script>
+
 <form action="search" method="get">
-Search it: <input type="text" name="q" value="Mickey" /><br />
-<input type="submit" value="Submit" />
+    <input type="text" name="q" placeholder="Find some items..."
+        <% if (searchString) { %>value="<%= searchString %>"<% } %>>
+    <button type="submit">Search</button>
 </form>
 
+<% if (searchString){ %>
+    <% if (items && items.length) { %>
+        <ul class="itemlist">
+          <% for (var i=0; i<items.length; i++) {%>
+            <li>
+              <a href="<%= items[i].link %>">
+                <span class="title"><%= items[i].title %></span>
+                <img src='<%= items[i].enclosure['@'].url %>'/>
+              </a>
+            </li>
+          <% } %>
+        </ul>
+    <% } else { %>
+        <p>No images matches your search</p>
+    <% } %>
+<% } %>
