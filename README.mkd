@@ -1,6 +1,10 @@
 MuseumVille
 ========================================================================
 
+Museumville is a game based on the digital resources of Europe's museums, libraries and archives. 
+As a Museum Curator, your role is to collect [Europeana](http://www.europeana.eu/portal/aboutus.html) artifacts (Items) and
+create Exhibitions with them.
+
 Some people love working with our cultural heritage. Everyone loves to play. 
 What if we turn work into play?
 
@@ -9,9 +13,6 @@ What if we turn work into play?
 - Show others
 - Keep your exhibitions in order
 
-Museumville is a game based on the digital resources of Europe's museums, libraries and archives. 
-As a Museum Curator, your role is to collect [Europeana](http://www.europeana.eu/portal/aboutus.html) artifacts (Items) and
-create Exhibitions with them.
 
 # Definition of Terms #
 
