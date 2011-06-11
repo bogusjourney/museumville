@@ -54,7 +54,6 @@ app.get('/search', function(req, res) {
         searchTerms: searchString,
         qf: 'TYPE:IMAGE',
         wskey: config.europeana.apiKey});
-  ;
 
   var clientReq = request({uri: searchUri}, function(error, clientRes, body) {
     if (!error && clientRes.statusCode == 200) {
