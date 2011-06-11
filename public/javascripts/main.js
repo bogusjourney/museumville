@@ -19,21 +19,23 @@ var pageHandlers = {
 
   search: function () {
 
-    $(function () {
-      $('.itemlist > li > a[href]').click(function() {
-        var $it = $(this);
-        // TODO: user from session...
-        var exhibitSlug = prompt('Add to exhibit:', "/ted/exhibit/0");
-        if (exhibitSlug) {
-          var item = {
-            subject: $it.attr('href'),
-            label: {"en": $('span', $it).text()},
-            thumbnail: $('img', $it).attr('src')
-          };
-          $.post(exhibitSlug, item, function () {}, "json");
-        }
-        return false;
-      });
+    $('.itemlist > li > a[href]').click(function () {
+      var $it = $(this);
+      var exhibitSlug = window.parent.location.pathname;
+      if (exhibitSlug == window.location.pathname) {
+        exhibitSlug = prompt('Add to exhibit:', "/bill/exhibit/0");
+      }
+      if (exhibitSlug) {
+        var item = {
+          subject: $it.attr('href'),
+          label: {"en": $('span', $it).text()},
+          thumbnail: $('img', $it).attr('src')
+        };
+        $.post(exhibitSlug, item, function (data) {
+          window.parent.location.reload();
+        });
+      }
+      return false;
     });
 
   }
