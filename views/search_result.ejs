@@ -1,23 +1,4 @@
-<script>
-  $(function () {
-    $('.itemlist > li > a[href]').click(function() {
-      var $it = $(this);
-      // TODO: user from session...
-      var exhibitSlug = prompt('Add to exhibit:', "/ted/exhibit/0");
-      if (exhibitSlug) {
-        var item = {
-          subject: $it.attr('href'),
-          label: {"en": $('span', $it).text()},
-          thumbnail: $('img', $it).attr('src')
-        };
-        $.post(exhibitSlug, item, function () {}, "json");
-      }
-      return false;
-    });
-  });
-</script>
-
-<h1><%= title %></h1>
+<h1>Search Results</h1>
 
 <ul class="itemlist">
   <% for(var i=0; i<items.length; i++) {%>

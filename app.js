@@ -10,8 +10,7 @@ var config = database.loadJSON(__dirname + "/siteconf.json", "utf-8");
 var dataDir = config.dataDir || __dirname + "/fixtures";
 var db = database.init(dataDir);
 var app = module.exports = express.createServer();
-//var nowjs = require('now');
-//var everyone = nowjs.initialize(httpServer);
+
 
 app.configure(function(){
   app.set('views', __dirname + '/views');
@@ -33,7 +32,7 @@ app.configure('production', function(){
 
 app.get('/', function(req, res){
   res.render('index', {
-    title: 'MuseumVille',
+    page: {id: 'index', title: 'MuseumVille'},
     items: ['Item A', 'Item B']
   });
 });
@@ -41,7 +40,9 @@ app.get('/', function(req, res){
 app.get('/search', function(req, res) {
   var searchString = req.param('q');
   if (!searchString) {
-    res.render('search', { title: 'search'});
+    res.render('search', {
+      page: {id: 'search', title: 'MuseumVille - Search'},
+    });
     return;
   }
   var searchUri = 'http://api.europeana.eu/api/opensearch.rss?searchTerms=' +
@@ -50,7 +51,10 @@ app.get('/search', function(req, res) {
     if (!error && clientRes.statusCode == 200) {
       var parser = new xml2js.Parser();
       parser.addListener('end', function(result) {
-        res.render('search_result', {items: result.channel.item, title: 'search'});
+        res.render('search_result', {
+          page: {id: 'search_result', title: 'MuseumVille - Search'},
+          items: result.channel.item
+        });
       });
       parser.parseString(body);
     } else {
@@ -64,8 +68,8 @@ app.get('/:userId', function(req, res) {
   var data = db.users[req.params.userId];
   if (!data) { res.send(404); return; }
   res.render('curator', {
-    'title': "MuseumVille - " + data.name,
-    'curator': data
+    page: {id: 'curator', title: "MuseumVille - " + data.name},
+    curator: data
   });
 });
 
@@ -75,9 +79,9 @@ app.get('/:userId/exhibit/:exhibitId', function(req, res) {
   var exhibit = curator.exhibits[parseInt(req.params.exhibitId)];
   if (!exhibit) { res.send(404); return; }
   res.render('exhibit', {
-    'title': "MuseumVille - " + curator.name + " - " + exhibit.name,
-    'curator': curator,
-    'exhibit': exhibit
+    page: {id: 'exhibit', title: "MuseumVille - " + curator.name + " - " + exhibit.name},
+    curator: curator,
+    exhibit: exhibit
   });
 });
 
@@ -91,6 +95,7 @@ app.post('/:userId/exhibit/:exhibitId', function(req, res) {
     res.send(200);
   }
 });
+
 
 app.listen(config.serverPort);
 console.log("Express server listening on port %d", app.address().port);
